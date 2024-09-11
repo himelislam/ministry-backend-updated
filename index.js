@@ -161,7 +161,7 @@ app.post('/get-shareable-link', async (req, res) => {
 
         res.json({
             shareLink: response.result.url,
-            downloadLink: response.result.url.replace('?dl=0', '?dl=1')
+            downloadLink: response.result.url.replace('&dl=0', '&dl=1')
         });
     } catch (error) {
         console.error('Error creating shareable link:', error);
