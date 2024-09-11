@@ -201,7 +201,7 @@ app.post('/submit-form', async (req, res) => {
 
 
 app.get('/', (req, res) => {
-    res.send("Ministry Viniyard")
+    res.send("Ministry Viniyard V2")
 })
 
 app.listen(port, () => {
