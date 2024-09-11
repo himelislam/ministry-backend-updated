@@ -1,0 +1,29 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Node modules
+node_modules/
+
+# Production
+dist/
+build/
+
+# Optional npm cache directory
+.npm/
+
+# Optional yarn cache directory
+.yarn/
+
+# Optional dotenv environment variables file
+.env
+
+# Vercel
+.vercel
+
+# MacOS
+.DS_Store
+
+# Other environment or editor specific files
+*.env.local
