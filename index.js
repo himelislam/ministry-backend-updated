@@ -92,7 +92,8 @@ app.post('/get-upload-link', async (req, res) => {
                 const response = await startUploadSession(accessToken);
 
                 const sessionId = response.result.session_id;
-                const filePathFinal = encodeURIComponent(`/${fileName}`);
+                // const filePathFinal = encodeURIComponent(`/${fileName}`);
+                const filePathFinal = `/${encodedFileName}`;
 
                 res.json({
                     uploadLink: `https://content.dropboxapi.com/2/files/upload_session/append_v2`,
