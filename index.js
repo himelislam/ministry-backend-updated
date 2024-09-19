@@ -52,7 +52,9 @@ app.get('/auth/dropbox', (req, res) => {
 
 // Get Upload link with starting the session
 app.post('/get-upload-link', async (req, res) => {
-    let { accessToken, fileName, fileSize } = req.body;
+    let { fileName, fileSize } = req.body;
+
+    let accessToken = process.env.DROPBOX_APP_ACCESS_TOKEN;
 
     async function startUploadSession(accessToken) {
         const dbx = new Dropbox({ accessToken });
@@ -117,7 +119,9 @@ app.post('/get-upload-link', async (req, res) => {
 
 // Upload the file path after uploading all the chunk
 app.post('/finish-upload-batch', async (req, res) => {
-    const { accessToken, cursorList, commitList } = req.body;
+    const { cursorList, commitList } = req.body;
+
+    let accessToken = process.env.DROPBOX_APP_ACCESS_TOKEN;
 
     const dbx = new Dropbox({ accessToken }); // Create a Dropbox instance with the access token
 
@@ -154,7 +158,9 @@ app.post('/finish-upload-batch', async (req, res) => {
 
 // Get Sharable and Downloadable link
 app.post('/get-shareable-link', async (req, res) => {
-    const { accessToken, path } = req.body;
+    const { path } = req.body;
+
+    let accessToken = process.env.DROPBOX_APP_ACCESS_TOKEN;
 
     try {
         const dbx = new Dropbox({ accessToken });
